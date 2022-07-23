@@ -1,0 +1,20 @@
+<div class="flex h-72 justify-center" >
+  <img [src]="product?.image" alt="" class="flex h-24 self-center" />
+  <div class="mt-5 border-2 flex flex-col w-80 p-1 pb-5">  {{ product.title ? product.title : '' }}
+  <p><span class="text-2xl font-semibold">{{ product.price | currency: "$" }}</span></p>
+
+    <button
+      class="border py-2 px-4 rounded w-1/5 flex self-center text-center items-center justify-center"
+      [ngClass]="{
+        'bg-yellow-400': details,
+        'bg-cyan-500': !details
+      }"
+      (click)="details = !details"
+    > {{ details ? "Hide" : "Show" }}</button>
+    <div *ngIf="details">
+    <p>{{ product.description }}</p>
+    <p>{{ product.rating.rate | number}}</p>
+    </div>
+  </div>
+
+</div>
