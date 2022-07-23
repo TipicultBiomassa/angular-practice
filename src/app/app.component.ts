@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   // products: IProduct[] = [];
   loading = false;
-
+  term = '';
   products$: Observable<IProduct[]>;
   constructor(private productsService: ProductsService) {}
   ngOnInit(): void {

@@ -1,1 +1,11 @@
-<p>global-error works!</p>
+<div
+  *ngIf="errorService.error$ | async as error"
+  class="h-24 w-fulll flex justify-center items-center bg-red-500 text-white">
+
+ {{ error }}
+
+
+  <button class="absolute top-5 right-5 bottom-5 h-12 w-12 text-5xl rounded-full bg-gray-600"
+          (click)="errorService.clear()"
+  >&times;</button>
+</div>
