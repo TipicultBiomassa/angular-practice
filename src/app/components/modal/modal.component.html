@@ -1,4 +1,7 @@
-<div class="bg-black/50 fixed top-0 right-0 left-0 bottom-0"></div>
+<div
+  class="bg-black/50 fixed top-0 right-0 left-0 bottom-0"
+  (click)="modalService.close()"
+></div>
 
 <div class=" w-1/2 absolute top-16 p-6 bg-gray-200 left-1/2 -translate-x-1/2 rounded gap-x-5">
   {{title | titlecase}}

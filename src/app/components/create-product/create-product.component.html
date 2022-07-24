@@ -1,6 +1,10 @@
-<form class="mt-5">
-  <input type="text" class="border w-full px-4 mb-2 p-5" placeholder="Product name">
-
+<form class="mt-5" [formGroup]="form" (ngSubmit)="submit()" >
+  <input type="text" class="border w-full px-4 mb-2 p-5" placeholder="Product name" formControlName="title"
+  appFocus
+  >
+  <p class="text-red-400 font-semibold w-full m-5 self-center"
+  *ngIf="title?.errors?.minlength && title.touched"
+  >Min length is 6 symbols</p>
   <button class="rounded bg-cyan-500 p-2 w-full" type="submit">Create</button>
 
 </form>
